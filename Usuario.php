@@ -11,22 +11,22 @@ class Usuario{
     function __construct(){
     }
   /**
-     * Insertar una nuevo usuario
+     * Insertar un nuevo usuario
      *
-     * @param $cedula          cedurla del usuario
-     * @param $nroexp          correo electronico
-     * @param $nombre          nombre del ususrio
-     * @param $apellido        apellido del usuario
-     * @param $telefono        telf del usuario
-     * @param $correo          correo electronico
-     * @param $clave           correo electronico
-     * @return PDOStatement
+     * @param $cedula          string
+     * @param $nroexp          string
+     * @param $nombre          string
+     * @param $apellido        string
+     * @param $correo          string
+     * @param $telefono        string
+     * @param $clave           string
+     * @return Retorna 0 en caso de error
      */
     public static function insert($cedula,$nroexp,$nombre,$apellido,$correo,$telefono,$clave) {
         $comando="CALL insertUsuario(?,?,?,?,?,?,?)";
         // Preparar la sentencia reemplaza los (?) por datos del array
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
-        
+
     try{ return $sentencia->execute(
             array(
                 $cedula,
@@ -34,7 +34,7 @@ class Usuario{
                 $nombre,
                 $apellido,
                 $correo,
-                $telefono,                
+                $telefono,
                 $clave
             )
         );

@@ -16,7 +16,7 @@ require 'Usuario.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Decodificando formato Json
-    
+
     $body = json_decode(file_get_contents("php://input"), true);
 
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $body['cedula'],
         $body['nroexp'],
         $body['nombre'],
-        $body['apellido'],      
+        $body['apellido'],
         $body['correo'],
         $body['telefono'],
         $body['clave']
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'contenido' => 'Creación fallida')
         );
     }
-    
+
 }
 
 ?>
