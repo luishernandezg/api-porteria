@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($retorno) {
         // Código de éxito
+           //setea el response status
+        http_response_code(201);
         header("Access-Control-Allow-Origin: *");
         print json_encode(
             array(
@@ -38,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Código de falla
         //header que permite el envio del json
+           //setea el response status
+        http_response_code(202);
         header("Access-Control-Allow-Origin: *");
         print json_encode(
             array(
