@@ -11,22 +11,22 @@ class Automovil{
     function __construct(){
     }
   /**
-     * Insertar una nuevo usuario
+     * Insertar una nuevo automovil
      *
-     * @param $matriculaauto          cedurla del usuario
-     * @param $modelo         correo electronico
-     * @param $ano          nombre del ususrio
-     * @param $color        apellido del usuario
-     * @return PDOStatement
+     * @param  $matricula       string        
+     * @param  $modelo          string
+     * @param  $ano             int          
+     * @param  $color           string
+     * @return Retorna 0 en caso de error
      */
-    public static function insert($matriculaauto,$modelo,$ano,$color) {
+    public static function insert($matricula,$modelo,$ano,$color) {
         $comando="CALL insertAutomovil(?,?,?,?)";
         // Preparar la sentencia reemplaza los (?) por datos del array
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
         
     try{ return $sentencia->execute(
             array(
-                $matriculaauto,
+                $matricula,
                 $modelo,
                 $ano,
                 $color

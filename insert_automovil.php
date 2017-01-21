@@ -6,8 +6,8 @@
 require 'Automovil.php';
 //Usuario::hola();
 //print "holaaaaaaaaa";
-$n = Automovil::insert("lal","lala",6325,"lala");
-print($n);
+//$n = Automovil::insert("llolo","lolo",6325,"lolo");
+//print($n);
 
 //print "n= es igual a <br>";
 //print "holaaaaaaaaa";
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Insertar Usuario
     $retorno = Automovil::insert(
-        $body['matriculaauto'],
+        $body['matricula'],
         $body['modelo'],
         $body['ano'],
         $body['color']
