@@ -6,14 +6,14 @@
 require 'Entrada.php';
 //Usuario::hola();
 //print "holaaaaaaaaa";
-$n = Entrada::getEntrada();
-print($n);
+//$n = Entrada::getEntrada();
+//print_r($n);
 //print "n= es igual a <br>";
 //print "holaaaaaaaaa";
 //print $n;
 //print "holaaaaaaaaa";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // Decodificando formato Json
     

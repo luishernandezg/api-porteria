@@ -39,6 +39,27 @@ class Automovil{
 
     }
 
+// Funcion delete: esta funcion se encarga de borrar el auto del usuario que se encuentra en el sistema
+    public static function deleteAutomovil($ciusuario,$matricula) {
+        $comando="CALL deleteAutomovil(?,?)";
+        // Preparar la sentencia reemplaza los (?) por datos del array
+        $sentencia = Database::getInstance()->getDb()->prepare($comando);
+        
+    try{ return $sentencia->execute(
+            array(
+                $ciusuario,
+                $matricula,
+            )
+        );
+    } catch (Exception $e) {
+        return 0;
+        }
+
+
+    }
+
+
+
 
     public static function hola(){
         print "hola mundo";

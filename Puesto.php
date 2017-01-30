@@ -20,7 +20,7 @@ class Puesto{
      * @param $idMeta Identificador del registro
      * @return array Datos del registro
      */
-   public static function obtenerPuesto()
+   public static function puestosLibres()
     {
        $comando="CALL puestosLibres()";
         $sentencia = Database::getInstance()->getDb()->prepare($comando);

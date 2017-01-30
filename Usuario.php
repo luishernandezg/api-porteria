@@ -4,7 +4,6 @@
 require 'Database.php';
 
 
-//print Database::getInstance()->getDb()->errorCode();
 
 class Usuario{
 
@@ -44,6 +43,23 @@ class Usuario{
 
 
     }
+
+    public static function login($email,$clave)
+    {
+       $comando="CALL login2(?,?)";
+        
+    try{ $sentencia = Database::getInstance()->getDb()->prepare($comando);
+            // Ejecutar sentencia preparada
+            $sentencia->execute(array($email,$clave));
+            // Capturar primera fila del resultado
+            $row = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $row;
+    } catch (Exception $e) {
+        return -1;
+        }
+
+    }
+
 
 
     public static function hola(){
